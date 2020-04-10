@@ -1,0 +1,8 @@
+#!/bin/false
+# shellcheck shell=bash # This file is used only for sourcing
+
+# Used to source rust.zerlib
+requires rust
+
+# Sets metadata for stable/testing channel
+PLATFORMS="amd64 ~amd64"
