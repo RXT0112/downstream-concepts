@@ -1,0 +1,5 @@
+#!/bin/ion
+
+# This is a stub file to output an error on invokation untill the development is finished
+
+die fixme "Ion shell backend is not yet finished"

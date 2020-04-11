@@ -1,0 +1,52 @@
+#!/bin/false
+# - This file is expected to be source never to be executed
+
+# Maintainers: Add your notices here
+###@ Created by Jacob Hrbek <kreyren@rixotstudio.cz> under GPL-3 License <https://www.gnu.org/licenses/gpl-3.0.en.html> in 11/04/2020 23:06 CET
+
+# FIXME-DOCS: Is ionrc a thing? If not how do we implement the changes?
+###! Abstract: Provide a wrapper that terminates the shell with specified exit status and outputs a helpful message
+###!
+###! SYNOPSIS: die [err] (message)
+###!
+###! Example:
+###!
+###!    user@example~$ die 1 "message"
+###!    FATAL: message
+###!
+###! Additional info:
+###! - End-users are expecte to have the ability to set format string using '$PALUDIS_DIE_FORMAT' in $paludisdir/ionrc
+
+# Set format string if required 
+if test "$PALUDIS_DIE_FORMAT" = ""
+	let PALUDIS_DIE_FORMAT:str = "FATAL: %s\\n"
+else if test "$PALUDIS_DIE_FORMAT" != ""
+	# FIXME: Implement debug message
+	true
+else
+	# NOTICE: Do not use die here
+	printf 'UNEXPECTED: %s\n' "Unexpected happend while assigning variable PALUDIS_DIE_FORMAT with value '$PALUDIS_DIE_FORMAT'"
+	exit 255
+end
+
+# FIXME: Allow end-user to customize the output
+fn die n:str message:str
+	match [ n ]
+		case 1;
+			printf "$PALUDIS_DIE_FORMAT" "$message"
+		# Used for development
+		case "ping"; 
+			printf 'PING: %s\n' "$message"
+			exit 1
+		case "fixme"; 
+			printf 'FIXME: %s\n' "$message"
+			exit 1
+		case _;
+			printf 'UNEXPECTED: %s\n' "$message"
+			exit 255
+	end
+
+	# Terminate with exit code
+	# FIXME-DOCS: Following page https://doc.redox-os.org/ion-manual/html/builtins.html?highlight=exit#exit---exit-the-shell requires specification for exit code support
+	exit $n
+end
