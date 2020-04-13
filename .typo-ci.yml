@@ -16,10 +16,10 @@ dictionaries:
 # Any files/folders we should ignore?
 # FIXME-CI: Check in-code commets for typos
 excluded_files:
-  - "*.bash"
-  - "*.sh"
-  - "*.ion"
-  - "*.py"
+  #- "*.bash"
+  #- "*.sh"
+  #- "*.ion"
+  #- "*.py"
   - "vendor/**/*"
   - "node_modules/**/*"
   - "*.key"
