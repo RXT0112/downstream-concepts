@@ -2,6 +2,7 @@
 
 This directory is dedicated to defining backend for [ion](https://github.com/redox-os/ion) downstream logic
 
+FIXME-POSIX: Not compatible with posix
 
 ### Blockers
 ION shell is currently not officially supported due to these reasons:

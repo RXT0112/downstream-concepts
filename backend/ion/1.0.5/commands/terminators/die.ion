@@ -17,7 +17,8 @@
 ###! Additional info:
 ###! - End-users are expecte to have the ability to set format string using '$PALUDIS_DIE_FORMAT' in $paludisdir/ionrc
 
-# Set format string if required 
+# Set format string if required
+# FIXME: This should be implemented in phase
 if test "$PALUDIS_DIE_FORMAT" = ""
 	let PALUDIS_DIE_FORMAT:str = "FATAL: %s\\n"
 else if test "$PALUDIS_DIE_FORMAT" != ""
@@ -30,8 +31,8 @@ else
 end
 
 # FIXME: Allow end-user to customize the output
-fn die n:str message:str
-	match [ n ]
+fn die arg:str message:str
+	match [ arg ]
 		case 1;
 			printf "$PALUDIS_DIE_FORMAT" "$message"
 		# Used for development
