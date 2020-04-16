@@ -5,4 +5,5 @@
 requires rust
 
 # Sets metadata for stable/testing channel
+# shellcheck disable=SC2034 # Metadata for zernit
 PLATFORMS="amd64 ~amd64"
