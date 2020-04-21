@@ -1,0 +1,1 @@
+Shell packages are expected to be written with POSIX compatibility in mind, if something can't be implemented in POSIX shell, then you are required to provide `die posix "message to why this can't work"` to be implemented

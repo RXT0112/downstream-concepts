@@ -1,0 +1,49 @@
+# This is a configuration file for Typo CI
+
+# What language dictionaries should it use? Currently Typo CI supports:
+dictionaries:
+  - en
+  - en_GB
+  - de
+  - en
+  - en_GB
+  - es
+  - fr
+  - it
+  - pt
+  - pt_BR
+
+# Any files/folders we should ignore?
+# FIXME-CI: Check in-code commets for typos
+excluded_files:
+  #- "*.bash"
+  #- "*.sh"
+  #- "*.ion"
+  #- "*.py"
+  - "vendor/**/*"
+  - "node_modules/**/*"
+  - "*.key"
+  - "*.enc"
+  - "*.min.css"
+  - "*.css.map"
+  - "*.min.js"
+  - "*.js.map"
+  - "*.mk"
+  - "package-lock.json"
+  - "yarn.lock"
+  - "Gemfile.lock"
+  - ".typo-ci.yml"
+
+# Any typos we should ignore?
+excluded_words:
+  - typoci
+  - theia
+  - rixotstudio
+  - paludis
+  - shellcheck
+  - Hrbek
+  - kreyren
+
+# Would you like filenames to also be spellchecked?
+spellcheck_filenames: true
+

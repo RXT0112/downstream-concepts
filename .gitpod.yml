@@ -1,0 +1,6 @@
+image:
+  file: gitpod/gitpod.Dockerfile
+
+vscode:
+  extensions:
+    - JesterOrNot.vscode-ion-shell@0.0.5:TWwIgn2u5jNtjYukDxVAwQ==

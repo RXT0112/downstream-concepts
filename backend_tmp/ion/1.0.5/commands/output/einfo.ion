@@ -1,0 +1,20 @@
+#!/bin/false
+
+# Created by Jacob Hrbek <kreyren@rixotstudio.cz> in 2020 under the terms of GPL-3 (https://www.gnu.org/licenses/gpl-3.0.en.html)
+
+###! Abstract:
+###! - Command used to output relevant information for end-user
+###!
+###! SYNOPSIS: einfo [message]
+###!
+###! Example:
+###!
+###!    user@example~$ einfo "Something"
+###!    INFO: Something
+###!
+###! Additional informations:
+###! - Can be customized using ZERNIT_EINFO_FORMAT
+
+fn einfo message:str
+	printf "$ZERNIT_EINFO_FORMAT" "$message"
+end

@@ -1,0 +1,20 @@
+#!/bin/false
+
+# Created by Jacob Hrbek <kreyren@rixotstudio.cz> in 2020 under the terms of GPL-3 (https://www.gnu.org/licenses/gpl-3.0.en.html)
+
+###! Abstract:
+###! - Command used to output relevant information for end-user
+###!
+###! SYNOPSIS: error [message]
+###!
+###! Example:
+###!
+###!    user@example~$ error "Something"
+###!    ERROR: Something
+###!
+###! Additional informations:
+###! - Can be customized using ZERNIT_EERROR_FORMAT
+
+fn eerror message:str
+	printf "$ZERNIT_EERROR_FORMAT" "$message"
+end

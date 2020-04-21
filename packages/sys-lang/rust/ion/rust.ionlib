@@ -1,0 +1,57 @@
+#!/bin/false
+# This file is used only for sourcing
+
+# Maintainers: Add your noticeshere, will be interpreted as changelog
+# FIXME: Implement interpretation for changelog
+###@ Created by Jacob Hrbek <kreyren@rixotstudio.cz> under GPL3 license <https://www.gnu.org/licenses/gpl-3.0.en.html> in 2020/04/02 - 05:58 CET
+###@ Initial configuration based on package made for paludis by Jacob Hrbek <kreyren@rixotstudio.cz> in 2020/04/10 - 19:15 CET
+
+# Maintainers: Maintain this documentation which is going to be interpreted as documentation for the package
+# FIXME: Implement interpretation for documenation
+###! Exlib used to provide a logic for rustc compilation
+###! Requires:
+###! - git [FIXME: Why?]
+###! - curl (on Unix) -- To fetch the binaries
+###! - pkg-config (on Unix, used to figure out the libssl headers/libraries)
+###! - OpenSSL headers (only for Unix, this is the libssl-dev package on ubuntu)
+###! Procedure:
+###! 1. Fetch the repository https://github.com/rust-lang/rust
+###! 1.1. On systems without rustc you need to download binary release provided by rustlang project from https://static.rust-lang.org/dist/ and set relevant variables to the full path of executables
+###! 2. Compile it and install it
+###! Code-style:
+###! - Indentation one tab (	)
+###! - Sanitize everything
+###! - Write in POSIX sh syntax where possible and add notices for things that cannot be used in POSIX shell
+###! - Avoid using `edo` where possible, expecting helpful messages
+###! - Do not remove unused phases in case we ever need them
+###! Additional info:
+###! - To build this project you have to use a one minor version less static!
+###! - Notice that GitHub doesn't give us submodules and it also is missing all of the vendored deps -> Use https://static.rust-lang.org/dist/rustc-$PV-src.tar.gz
+###! - releases https://github.com/rust-lang/rust/releases
+###! Informations for maintainers:
+###! - This package supports GNU philosophy for platform support (https://www.gnu.org/prep/maintain/html_node/Platforms.html) -> Write the code in such a way that woudn't prevent a support of other kernels and platforms in general. The intention here is to avoid rewriting in the future
+###! - For python flag -- Python 3.8 is not supported (FIXME: tracking needed)
+
+# NOTICE: https://github.com/rust-lang/rust/blob/1.42.0/src/bootstrap/config.rs#L387-L393 -> Implement in documentation
+
+# NOTICE: This is implemented logic from https://github.com/rust-lang/rust/blob/1.42.0/x.py
+
+### METADATA ###
+
+# FIXME-QA: Adapt `shellcheck source="..."` so that we can get rit of SC2034 disables
+
+let ORGANIZATION="rust-lang"
+let SUMMARY="Rustlang compiler"
+let DESCRIPTION="FIXME-DOCS: Add description" # max 100 chars
+let HOMEPAGE="https://github.com/rust-lang/rust"
+let LICENCES="
+	Apache-2.0 [[ note = [ main license ] ]]
+	MIT [[ note = [ FIXME purpose ] ]]"
+let BUGS_TO="kreyren@rixotstudio.cz"
+#let UPSTREAM_CHANGELOG="https://... [[ lang = en ]]"
+let UPSTREAM_DOCUMENTATION=(
+	"https://doc.rust-lang.org/rustc/ [[ lang = en description = [ The rustc book ] ]]"
+)
+let UPSTREAM_RELEASE_NOTES=(
+	"https://github.com/rust-lang/rust/blob/master/RELEASES.md [[ lang = en description = [ Upstream release notes ] ]]"
+)
